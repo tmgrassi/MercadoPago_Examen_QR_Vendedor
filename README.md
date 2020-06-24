@@ -46,13 +46,9 @@ Este ejercicio se basa en hacer funcional el ejemplo que compartimos en este rep
 
 ¿Qué debe hacer este ejercicio?
 
-1) Permitir crear una sucursal
-   El external_id de la sucursal deberá ser: [suc]+[número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: suc218545556001
-2) Permiir crear un POS/QR
-   El external_id del pos deberá ser: [pos]+[número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: pos218545556001
-3) Peritir crear una orden asignada a un POS/QR
-4) Crea una orden y simular un pago rechazado mediante la tarjeta de crédito "American Express" y acto seguido usar otro medio de pago y usar la tarjeta de crédito Master Card para lograr un pago exitoso. Ver (*)
-   El external_reference deberá ser [ref]+[tu número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: ref218545556001
+1) Crear una sucursal   
+2) Crear un POS/QR
+3) Crea una orden y simular un pago rechazado mediante la tarjeta de crédito "American Express" y acto seguido usar otro medio de pago y usar la tarjeta de crédito Master Card para lograr un pago exitoso. Ver (*)
 5) Escuchar las notificaciones para confirmar el pago de la orden.
 6) Escuchar el servicio merchant_orders para confirmar el pago de la orden
    
@@ -84,10 +80,10 @@ La respuesta del resultado del ejercicio será inmediato.
 Si no apruebas recibirás un correo en el que te indicaremos dónde cometistes los fallos para que puedas volver a repetirlo, en caso de aprobar el examen estarás automáticamente certificado en esta modalidad. Al cabo de unos días recibirás un correo que te daría acceso a nuestra comunidad en Slack para desarrolladores certificados en inStore, así como te enviaremos el certificado y tu integrator-id (en caso de no tenerlo).
 
 
-Credenciales de usuarios de TEST para las pruebas:
+TEST EN ARGENTINA
 --------------------------------------------------
 
-Credenciales para ejercicio en ARGENTINA:
+Credenciales de usuarios de TEST para las pruebas:
 
 VENDEDOR:
 - access_token: APP_USR-7026946692817220-061822-8b7c9e20631faac22d9e4cfa92a37265-586728271
@@ -97,6 +93,31 @@ VENDEDOR:
 COMPRADOR (para usar desde la app de Mercado Pago):
 - email: test_user_66671705@testuser.com
 - password: qatest3881
+
+Datos para ingresar en las pruebas:
+
+Sucursal:
+   - name: "Sucursal"+" "+"número de DNI sin puntos ni rayas", por ejemplo: "Sucursal 218545556"
+   - street_name: Sinclair
+   - street_number: 2929
+   - country: Argentina
+   - State: Capital Federal
+   - City: Palermo
+   - latitude: -34.5756022
+   - longitude: -58.4249225
+   - external_id: de la sucursal deberá ser: "suc"+"número de DNI sin puntos ni rayas"+"número correlatvo por cada prueba 001", por ejemplo: "suc218545556001"
+   - address_reference: Piso 1   
+
+POS/QR:
+   - name: "POS"+" "+"número de DNI sin puntos ni rayas", por ejemplo: "POS 218545556"
+   - external_store_id: El mismo external_id creado en la sucursal
+   - external_id: El external_id del pos deberá ser: [pos]+[número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: "pos218545556001"
+   
+ORDEN:
+   - store_id: Es el ID resultante de crear la sucursal, o también llamado STORE_ID (no es el external_id de la sucursal)
+   - external_pos_id: Es el external_id creado en el POS
+   - external_reference: El external_reference deberá ser [ref]+[tu número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: "ref218545556001"
+
 
 
 
