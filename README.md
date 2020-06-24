@@ -64,8 +64,8 @@ Esto principalmente será en los archivos:
 /api/ (revisar todos los index.php y functions.php que contiene algunas variables globales)
 
 
-En este video  te mostramos un flujo completo de cómo debería ser el resultado de la prueba:
-VIDEO
+En este video te mostramos un flujo completo del resultado esperado del ejercicio:
+https://youtu.be/SYzYz6m0cCE
 
 
 Validación del ejercicio
