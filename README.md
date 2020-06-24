@@ -119,6 +119,8 @@ ORDEN:
    - store_id: Es el ID resultante de crear la sucursal, o también llamado STORE_ID (no es el external_id de la sucursal)
    - external_pos_id: Es el external_id creado en el POS
    - external_reference: El external_reference deberá ser: ref + tu número de DNI sin puntos ni rayas + número correlatvo por cada prueba 001, por ejemplo: ref218545556001
+   - notification_url: Este campo debe tener una url correcta. El servicio de recepción de notificacinones deberá ser accesible públicamente por inernet.
+   - El monto total de la orden debe coincidir con $ 660.
 
 
 
