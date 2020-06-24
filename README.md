@@ -56,7 +56,9 @@ Los JSON resultantes de las llamadas del ejercicio deberás copiarlos y pegados 
 
 Para que todo ello funcione deberás comprobar de realizar los cambios o los añadidos necesarios en el código para que todo funcione.
 
-Dentro del código encontrarás comentado mediante el título // REVISA AQUÍ: las acciones que deberás revisar.
+Dentro del código encontrarás comentado mediante el siguiente texto las acciones que deberás revisar:
+
+// REVISA AQUÍ: 
 
 Esto principalmente será en los archivos:
 
@@ -97,7 +99,7 @@ COMPRADOR (para usar desde la app de Mercado Pago):
 Datos para ingresar en las pruebas:
 
 Sucursal:
-   - name: "Sucursal"+" "+"número de DNI sin puntos ni rayas", por ejemplo: "Sucursal 218545556"
+   - name: Sucursal + espacio + número de DNI sin puntos ni rayas, por ejemplo: Sucursal 218545556
    - street_name: Sinclair
    - street_number: 2929
    - country: Argentina
@@ -105,18 +107,18 @@ Sucursal:
    - City: Palermo
    - latitude: -34.5756022
    - longitude: -58.4249225
-   - external_id: de la sucursal deberá ser: "suc"+"número de DNI sin puntos ni rayas"+"número correlatvo por cada prueba 001", por ejemplo: "suc218545556001"
+   - external_id: de la sucursal deberá ser: suc + número de DNI sin puntos ni rayas + número correlatvo por cada prueba 001, por ejemplo: suc218545556001
    - address_reference: Piso 1   
 
 POS/QR:
-   - name: "POS"+" "+"número de DNI sin puntos ni rayas", por ejemplo: "POS 218545556"
+   - name: POS + espacio + número de DNI sin puntos ni rayas, por ejemplo: POS 218545556
    - external_store_id: El mismo external_id creado en la sucursal
-   - external_id: El external_id del pos deberá ser: [pos]+[número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: "pos218545556001"
+   - external_id: El external_id del pos deberá ser: [pos]+[número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: pos218545556001
    
 ORDEN:
    - store_id: Es el ID resultante de crear la sucursal, o también llamado STORE_ID (no es el external_id de la sucursal)
    - external_pos_id: Es el external_id creado en el POS
-   - external_reference: El external_reference deberá ser [ref]+[tu número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: "ref218545556001"
+   - external_reference: El external_reference deberá ser: ref + tu número de DNI sin puntos ni rayas + número correlatvo por cada prueba 001, por ejemplo: ref218545556001
 
 
 
