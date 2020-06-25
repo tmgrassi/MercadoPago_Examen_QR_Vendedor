@@ -127,6 +127,7 @@ ORDEN:
 
 (*) Tarjetas de crédito para pruebas: 
 ---------------------------------
+- Recuerda poner APRO en el titular de la tarjeta para simular pagos aprobados y OTHE para simular pagos rechazados como se indica en la documentación:
 https://www.mercadopago.com.ar/developers/es/guides/qr-code/final-steps/integration-test/#bookmark_tarjetas_de_prueba
 
 
