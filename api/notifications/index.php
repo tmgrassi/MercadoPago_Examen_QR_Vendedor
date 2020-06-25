@@ -10,6 +10,7 @@ global $access_token,$collector_id,$notificationJSON;
 // Mediante php://input
 // Interpreta solamente las IPN buscando que lleguen los campos
 // resource y topic en el body.
+// Como no trabajaremos con Base de Datos, ésta es una forma creativa de recibir las notificaciones y guardar la última en un archivo de texto para poder hacer las consultas.
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
 
