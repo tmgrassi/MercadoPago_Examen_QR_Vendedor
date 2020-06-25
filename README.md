@@ -51,6 +51,7 @@ Este ejercicio se basa en hacer funcional el ejemplo que compartimos en este rep
 3) Crea una orden y simular un pago rechazado mediante la tarjeta de crédito "American Express" y acto seguido usar otro medio de pago y usar la tarjeta de crédito Master Card para lograr un pago exitoso. Ver (*)
 5) Escuchar las notificaciones para confirmar el pago de la orden.
 6) Escuchar el servicio merchant_orders para confirmar el pago de la orden
+7) Modifica la página index.html en ingresa tu DNI/RUT o número de identificación de tu carnet en el comentario que hace mención a ello.
    
 Los JSON resultantes de las llamadas del ejercicio deberás copiarlos y pegados en el formulario de validación del ejercicio.
 
