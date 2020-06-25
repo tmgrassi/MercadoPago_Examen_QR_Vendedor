@@ -71,22 +71,11 @@ En este video te mostramos un flujo completo del resultado esperado del ejercici
 https://youtu.be/SYzYz6m0cCE
 
 
-Validación del ejercicio
-------
 
-Una vez realices el ejercicio completo y sea funcional deberás cumplimentar el siguiente formulario:
-
-https://bit.ly/examen-QR-Vendedor-MP
-
-La respuesta del resultado del ejercicio será inmediato. 
-
-Si no apruebas recibirás un correo en el que te indicaremos dónde cometistes los fallos para que puedas volver a repetirlo, en caso de aprobar el examen estarás automáticamente certificado en esta modalidad. Al cabo de unos días recibirás un correo que te daría acceso a nuestra comunidad en Slack para desarrolladores certificados en inStore, así como te enviaremos el certificado y tu integrator-id (en caso de no tenerlo).
-
-
-TEST EN ARGENTINA
+DATOS PARA EL TEST
 --------------------------------------------------
 
-Credenciales de usuarios de TEST para las pruebas:
+Credenciales de usuarios de TEST para las pruebas. Las cuentas de test son Argentinas pero puedes estar en otro país sin problemas:
 
 VENDEDOR:
 - access_token: APP_USR-7026946692817220-061822-8b7c9e20631faac22d9e4cfa92a37265-586728271
@@ -125,11 +114,23 @@ ORDEN:
 
 
 
-
 (*) Tarjetas de crédito para pruebas: 
 ---------------------------------
 - Recuerda poner APRO en el titular de la tarjeta para simular pagos aprobados y OTHE para simular pagos rechazados como se indica en la documentación:
 https://www.mercadopago.com.ar/developers/es/guides/qr-code/final-steps/integration-test/#bookmark_tarjetas_de_prueba
+
+
+Validación del ejercicio
+------
+
+Una vez realices el ejercicio completo y sea funcional deberás cumplimentar el siguiente formulario:
+
+https://bit.ly/examen-QR-Vendedor-MP
+
+La respuesta del resultado del ejercicio será inmediato. 
+
+Si no apruebas recibirás un correo en el que te indicaremos dónde cometistes los fallos para que puedas volver a repetirlo, en caso de aprobar el examen estarás automáticamente certificado en esta modalidad. Al cabo de unos días recibirás un correo que te daría acceso a nuestra comunidad en Slack para desarrolladores certificados en inStore, así como te enviaremos el certificado y tu integrator-id (en caso de no tenerlo).
+
 
 
 IMPORTANTE:
