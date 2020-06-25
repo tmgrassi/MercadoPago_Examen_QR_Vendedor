@@ -102,6 +102,7 @@ Sucursal:
 
 POS/QR:
    - name: POS + espacio + número de DNI sin puntos ni rayas, por ejemplo: POS 218545556
+   - fixed_amount: Es importante para que el QR esté integrado que este dato sea true.
    - external_store_id: El mismo external_id creado en la sucursal
    - external_id: El external_id del pos deberá ser: [pos]+[número de DNI sin puntos ni rayas]+[número correlatvo por cada prueba 001], por ejemplo: pos218545556001
    
