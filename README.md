@@ -129,3 +129,17 @@ ORDEN:
 ---------------------------------
 https://www.mercadopago.com.ar/developers/es/guides/qr-code/final-steps/integration-test/#bookmark_tarjetas_de_prueba
 
+
+IMPORTANTE:
+------
+
+- Esta es una prueba individual y la evaluación se realizará de forma individual.
+- No se aceptará que los participantes se compartan respuestas ni código.
+- Tampoco podrá reutilizarse el hospedaje del sitio, sino que cada uno deberá levantar y compartir su propio sitio público con el ejemplo.
+
+
+
+
+
+
+
