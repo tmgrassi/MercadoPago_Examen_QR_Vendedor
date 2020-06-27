@@ -1,6 +1,8 @@
 # Examen para Certificación de Desarrolladores QR Vendedor de Mercado Pago (modelo atendido)
 --------------------------------
 
+NOTA IMPORTANTE: Ha habido un cambio y ahora ya no será necesario hacer el flujo de pago rechazado y pago aprobado. No será necesario hacer ningún cambio en el desarrollo, simplemente pasar por alto la pregunta Q4.
+
 ¡Bienvenido al examen de certificación de integración QR Vendedor (modo atendido) de Mercado Pago!
 
 Queremos que formes parte de nuestra comunidad de desarrolladores certificados y para ello te invitamos a que realices este examen.
