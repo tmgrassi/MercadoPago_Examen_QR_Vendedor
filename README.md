@@ -48,7 +48,8 @@ Este ejercicio se basa en hacer funcional el ejemplo que compartimos en este rep
 
 1) Crear una sucursal   
 2) Crear un POS/QR
-3) Crea una orden y simular un pago rechazado mediante la tarjeta de crédito "American Express" y acto seguido usar otro medio de pago y usar la tarjeta de crédito Master Card para lograr un pago exitoso. Ver (*)
+3) Crea una orden y simula un pago APROBADO mediante la tarjeta de crédito Master Card para lograr un pago EXITOSO. Ver (*)
+4) YA NO ES NECESARIO HACER SIMULACIÓN DE PAGO RECHAZADO.
 5) Escuchar las notificaciones para confirmar el pago de la orden. Puedes hacerlo mediante el ejemplo proporcionado o usar otras plataformas como Hookbin.com o similar. Lo importante es que el ejercicio obtenga el resultado esperado.
 6) Escuchar el servicio merchant_orders para confirmar el pago de la orden
 7) Modifica la página index.html en ingresa tu DNI/RUT o número de identificación de tu carnet en el comentario que hace mención a ello.
