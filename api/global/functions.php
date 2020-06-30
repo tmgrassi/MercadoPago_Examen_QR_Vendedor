@@ -3,9 +3,9 @@
 // REVISA AQUÍ:
 // Agrega el access_token que se indica en el ejercicio así como el collector_id y el country_id
 
-$access_token="INGRESA AQUÍ EL ACCESS_TOKEN DEL USUARIO VENDEDOR";
-$collector_id="INGRESA AQUÍ EL COLLECTOR_ID DEL USUARIO VENDEDOR";
-$country_id="INGRESA AQUÍ EL COUNTRY_ID: MLA, MLM, MCO, MLC, MPE, MLU...";
+$access_token="APP_USR-7026946692817220-061822-8b7c9e20631faac22d9e4cfa92a37265-586728271";
+$collector_id="586728271";
+$country_id="MLA";
 
 // No tocar el integrator_id para el ejercicio
 $integrator_id_test="XXXXXXX"; 
@@ -27,7 +27,13 @@ function curl_call($method,$url,$json){
 	$method = strtoupper($method);
 	$headers = array("Content-Type: application/json","X-integrator-id: $integrator_id_test");
     $ch = curl_init();
-    if($method=="POST"){$post=1;}else{$post=0;};
+    
+    if($method=="POST") {
+        $post=1;
+    } else {
+        $post=0;
+    };
+
     $options = array(
         CURLOPT_URL => $url,
 		CURLOPT_CUSTOMREQUEST=> $method, 
@@ -38,8 +44,7 @@ function curl_call($method,$url,$json){
 
     curl_setopt_array($ch, $options);
     $response = curl_exec($ch);
-   curl_close($ch);
-   return $response;
-
+    curl_close($ch);
+    return $response;
 }
 ?>
