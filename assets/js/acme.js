@@ -58,13 +58,13 @@ $(document).ready(function() {
 		    // Muestra el código QR del punto de venta seleccionado
 
 		    // Llama al servicio de obtención de información de un POS/QR en base al external_pos_id o también llamado external_id
-			$.get("api/pos/get/",{"external_id":external_id},function(data){
+			$.get("api/pos/get/", {"external_id":external_id}, function(data) {
 				console.log("Obtención información de QR:");
 				console.log(data);
 
 				// Si existe external_ID...
 
-				if(data.paging.total>0){
+				if(data.paging.total > 0) {
 			
 					// Muestra el código QR en pantalla:
 
@@ -74,10 +74,11 @@ $(document).ready(function() {
 					// Agrega la URL notification_url 
 					// para recibir las notificaciones en tu endpoint público.
 
-					var orderJSON ={"external_reference": external_reference,
-									"notification_url": "",
-									"items" : items
-									};
+					var orderJSON = {
+						"external_reference": external_reference,
+						"notification_url": "https://mp-qr.herokuapp.com/api/notifications/",
+						"items" : items
+					};
 
 					// Crea orden en base al external_id de la página
 
@@ -116,20 +117,20 @@ $(document).ready(function() {
 									$('#orderStatus').text(orderStatus);
 									$('#loading').html("<img src='assets/img/ajax-loader.gif'>");
 
-									try{
+									try {
 										if(orderStatus=="opened" && elements[totalElements-1].payments[0].status=="rejected"){
 											// print 
 											if($('#paymentStatusRejected').text()==""){
 												$('#paymentStatusRejected').text(JSON.stringify(data));
 											}
 										}
-									}catch(e){}
+									} catch(e){}
 
 									// Si la orden se cerró (pagó) termina el timeout y pinta el JSON resultante y cierra el modal
 
-									if(orderStatus=="closed"){
-										if(cashSound){playSound("cash")};
-										cashSound=false;
+									if(orderStatus == "closed"){
+										if(cashSound) { playSound("cash") };
+										cashSound = false;
 										setTimeout(clearInterval(checkStatus),3000);
 
 										$('#orderFinalStatus').text(elements[totalElements-1]);
@@ -148,20 +149,20 @@ $(document).ready(function() {
 								console.log("Search Notifications:");
 								console.log(data);
 
-								if(data.status=="opened" && data.external_reference==external_reference){
+								if(data.status=="opened" && data.external_reference == external_reference){
 						 			
 							 		$('#orderStatus').text(data.status);
 							 		$('#loading').html("<img src='assets/img/ajax-loader.gif'>");
 								}
 
-								try{
-									if(orderStatus=="opened" && elements[totalElements-1].payments[0].status=="rejected"){
+								try {
+									if(orderStatus == "opened" && elements[totalElements-1].payments[0].status == "rejected"){
 										// print 
 										if($('#paymentStatusRejected').text()==""){
 											$('#paymentStatusRejected').text(JSON.stringify(data));
 										}
 									}
-								}catch(e){}
+								} catch(e){}
 
 								// Si la orden se cerró (pagó) se termina la búsqueda y cierra modal.
 								
@@ -181,7 +182,7 @@ $(document).ready(function() {
 
 					}); // end get pos information
 				
-				}else{ // end if total
+				} else { // end if total
 
 					$('#qr').html("This External POS ID: 'EPOSID' does not exists<br/>for this Store ID: 'Store_id'".replace("EPOSID",external_id).replace("Store_id",store_id));
 
@@ -200,7 +201,7 @@ $(document).ready(function() {
 		    	// Clear check status interval
 		    	clearInterval(checkStatus);
 
-				$.get("api/order/delete/",{"external_id":external_id},function(){
+				$.get("api/order/delete/", {"external_id":external_id}, function(){
 					
 				});
 
@@ -236,9 +237,9 @@ $(document).ready(function() {
 
 	function showProductList(){
 		var total = 0;
-		for (i in items){
-			$('#productList').append("<tr><th scope='row'>"+items[i].id+"</th><td><img with='60px' height='60px' src='"+items[i].picture_url+"'></td><td>"+items[i].title+"</td><td>"+items[i].quantity+"</td><td>"+items[i].unit_price+"</td><td>"+items[i].quantity*items[i].unit_price+"</td></tr>");
-			total = total + items[i].quantity*items[i].unit_price;
+		for (i in items) {
+			$('#productList').append("<tr><th scope='row'>" + items[i].id + "</th><td><img with='60px' height='60px' src='" + items[i].picture_url + "'></td><td>" + items[i].title + "</td><td>" + items[i].quantity+"</td><td>" + items[i].unit_price + "</td><td>" + items[i].quantity*items[i].unit_price + "</td></tr>");
+			total = total + items[i].quantity * items[i].unit_price;
 		}
 		$('#productList').append("<tr><th scope='row'></th><td></td><td></td><td></td><td><b>Total:</b></td><td><b>"+total+"</b></td></tr>")
 	}; // end showProductList
@@ -269,24 +270,24 @@ $(document).ready(function() {
 ///////////////////////////////////////////////////////////////////////////
 	function fillCountrySelector(){
 
-		$.get("https://api.mercadolibre.com/countries",function(countries){
+		$.get("https://api.mercadolibre.com/countries",function(countries) {
 			$('#country').html("<option>Selecciona el país...</option>");
 
-			for(country in countries){
-				$('#country').append("<option value='"+countries[country].id+"'>"+countries[country].name+"</option>");
+			for(country in countries) {
+				$('#country').append("<option value='" + countries[country].id + "'>" + countries[country].name + "</option>");
 			}
 		});
 
 	}; // 
 
-	$("#country").change(function(){
+	$("#country").change(function() {
 		var selectedCountry = $("#country option:selected").val();
-		$.get("https://api.mercadolibre.com/countries/"+selectedCountry,function(regions){
+		$.get("https://api.mercadolibre.com/countries/" + selectedCountry, function(regions){
 			regions = regions.states;
 			$('#states').html("<option>Selecciona la región...</option>");
 
-			for(region in regions){
-				$('#states').append("<option value='"+regions[region].id+"'>"+regions[region].name+"</option>");
+			for(region in regions) {
+				$('#states').append("<option value='" + regions[region].id + "'>" + regions[region].name + "</option>");
 			}
 		});
 	});
@@ -294,12 +295,12 @@ $(document).ready(function() {
 	$("#states").change(function(){
 		var selectedState = $("#states option:selected").val();
 
-		$.get("https://api.mercadolibre.com/states/"+selectedState,{},function(cities){
+		$.get("https://api.mercadolibre.com/states/" + selectedState, {}, function(cities) {
 			cities = cities.cities;
 			$('#cities').html("<option>Selecciona la ciudad o comuna...</option>");
 
 			for(city in cities){
-				$('#cities').append("<option value='"+cities[city].id+"'>"+cities[city].name+"</option>");
+				$('#cities').append("<option value='" + cities[city].id + "'>" + cities[city].name + "</option>");
 			}
 		});
 	});
@@ -325,10 +326,22 @@ $(document).ready(function() {
 		// REVISA AQUÍ:
 		// Modifica el storeJSON con la estructura necesaria para crear una Store correctamente.
 
-		var storeJSON = {}
+		var storeJSON = {
+			"external_id": externalStoreID,
+			"name": storeName,
+			"location": {
+				"city_name": city,
+				"latitude": latitude,
+				"longitude": longitude,
+				"reference": addressReference,
+				"state_name": state,
+				"street_name": streetName,
+				"street_number": streetNumber
+			}
+		}
 
 		console.log(storeJSON);
-		$.post("api/store/create/",{json:JSON.stringify(storeJSON)},function(results){
+		$.post("api/store/create/", {json:JSON.stringify(storeJSON)}, function(results) {
 			console.log("Crea store:");
 			console.log(results);
 			$("#responseStore").text(JSON.stringify(results));
@@ -339,35 +352,35 @@ $(document).ready(function() {
 // POS Functions
 ///////////////////////////////////////////////////////////////////////////
 
-	$('#createPOS').click(function(){
+	$('#createPOS').click(function() {
 
-		var posName=$('#storeName').val();
-		var externalStoreID=$('#externalStoreIDPOS').val();
-		var externalPOSID=$('#externalPOSID').val();
+		var posName = $('#storeName').val();
+		var externalStoreID = $('#externalStoreIDPOS').val();
+		var externalPOSID = $('#externalPOSID').val();
 
 		// REVISA AQUÍ:
 
-		var category = 1;   // Agrega aquí el número de categoría o MCC necesario para 
-							// Identificar al POS de restaurante
+		var category = 621102;   // Agrega aquí el número de categoría o MCC necesario para 
+		// Identificar al POS de restaurante
 
 
 		// REVISA AQUÍ:
 		// Comprueba que el posJSON sea el adecuado para crear un POS integrado correctamente.
 
-		var posJSON ={"name":posName,
-					"external_store_id":externalStoreID,
-					"fixed_amount":false,
-					"category_id":category,
-					"external_id":externalPOSID};
+		var posJSON = {
+			"name": posName,
+			"external_store_id": externalStoreID,
+			"fixed_amount": true,
+			"category": category,
+			"external_id": externalPOSID
+		};
 
 
 
-		$.post("api/pos/create/",{json:JSON.stringify(posJSON)},function(results){
+		$.post("api/pos/create/", {json:JSON.stringify(posJSON)}, function(results) {
 			console.log("Crea POS/QR:");
 			console.log(results);
-
 			$("#responsePOS").text(JSON.stringify(results));
-
 		});
 	});
 
@@ -385,7 +398,7 @@ var items = [{
 		    "picture_url":"https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242",
 		    "description" : "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance. Pro Tip: For an additional boost, ask your barista to try this with an extra shot.",
 		    "unit_price" : 90,
-		    "quantity" : 1
+		    "quantity" : 2
 		  },
 		  {
 		  	"id":"sku011",
